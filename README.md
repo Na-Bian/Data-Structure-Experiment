@@ -1,6 +1,14 @@
 # Data Structure Experiment
 华中科技大学网安学院大一下必修课《数据结构实验》
 
+#### 主要工具
+* Visual Studio 2022
+* Microsoft Word
+* Microsoft Visio
+
+
+© 2025 那，边。版权所有。仅供参考。
+
 ## 理论课编程作业1-1：链表节点的删除和添加操作
 
 ### 任务描述
