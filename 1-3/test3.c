@@ -17,4 +17,3 @@ int depth(Bitnode* t)
     return 1 + (depth(t->left) > depth(t->right) ? depth(t->left) : depth(t->right));
     /******end********/
 }
-
