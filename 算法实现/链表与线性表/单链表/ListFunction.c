@@ -1,5 +1,6 @@
 # include "List.h"
 
+
 //初始化链表
 List init_list(DataType type) {
     List head = malloc(sizeof(*head));
