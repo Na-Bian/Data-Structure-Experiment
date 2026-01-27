@@ -1,4 +1,5 @@
-# include "Algorithm.c"
+# include "List.h"
+
 
 int main() {
     //测试函数find_last_k_node
