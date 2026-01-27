@@ -1,6 +1,10 @@
 # ifndef LIST_LIST_H
 # define LIST_LIST_H
 
+# include <math.h>
+# include <stdio.h>
+# include <stdlib.h>
+
 //定义数据类型
 typedef union Data {
     int int_data;
