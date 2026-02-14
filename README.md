@@ -4,6 +4,7 @@
 #### 主要工具
 * Visual Studio 2022
 * CLion 2025.3.2
+* IntelliJ IDEA 2025.3.2
 * Microsoft Word
 * Microsoft Visio
 
