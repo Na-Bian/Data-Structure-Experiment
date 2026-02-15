@@ -5,6 +5,7 @@
 * Visual Studio 2022
 * CLion 2025.3.2
 * IntelliJ IDEA 2025.3.2
+* PyCharm 2025.3.2.1
 * Microsoft Word
 * Microsoft Visio
 
