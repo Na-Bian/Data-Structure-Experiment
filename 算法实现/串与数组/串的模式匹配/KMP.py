@@ -1,4 +1,3 @@
-
 def KMP(pattern, text):
     if pattern == "":
         return 0
