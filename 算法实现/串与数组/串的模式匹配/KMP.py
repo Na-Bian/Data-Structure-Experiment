@@ -6,11 +6,12 @@ def KMP(pattern, text):
     # 分隔符必须不出现在两个原始字符串中
     combine = pattern + "#" + text
     pi = [0] * len(combine)
+    # 保存当前最长相同前后缀长度
+    j = 0 
 
     m = len(pattern)
 
     for i in range(1, len(combine)):
-        j = pi[i - 1]
 
         # 失配时，回退到更短的公共前后缀
         while j > 0 and combine[i] != combine[j]:
