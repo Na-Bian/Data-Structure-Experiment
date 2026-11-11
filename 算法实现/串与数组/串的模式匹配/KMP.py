@@ -1,29 +1,35 @@
-def KMP(pattern, str):
-    # 将模式串和文本串连接起来，使用特殊字符分隔，避免匹配时出现重叠
-    combine = pattern + "#" + str
-    # 第一个位置的最长公共前后缀长度为0
-    pi = [0, ]
+
+def KMP(pattern, text):
+    if pattern == "":
+        return 0
+
+    # 分隔符必须不出现在两个原始字符串中
+    combine = pattern + "#" + text
+    pi = [0] * len(combine)
+
+    m = len(pattern)
 
     for i in range(1, len(combine)):
-        # 获取前一个位置的最长公共前后缀长度
-        prev = pi[i - 1]
+        j = pi[i - 1]
 
-        # 如果当前字符与前一个位置的最长公共前后缀的下一个字符不匹配，则继续回退到更短的公共前后缀
-        while prev > 0 and combine[i] != combine[prev]:
-            prev = pi[prev - 1]
+        # 失配时，回退到更短的公共前后缀
+        while j > 0 and combine[i] != combine[j]:
+            j = pi[j - 1]
 
-        # 如果当前字符与前一个位置的最长公共前后缀的下一个字符匹配，则最长公共前后缀长度加1
-        if combine[i] == combine[prev]:
-            if i > len(pattern) and prev + 1 == len(pattern):
-                return i - 2 * len(pattern)  # 匹配成功，返回主串中匹配的起始位置
-            pi.append(prev + 1)
-        # 否则最长公共前后缀长度为0
-        else:
-            pi.append(0)
+        # 匹配成功时，长度增加
+        if combine[i] == combine[j]:
+            j += 1
+
+        pi[i] = j
+
+        # 在主串部分匹配到整个模式串
+        if i > m and pi[i] == m:
+            return i - 2 * m
+
+    return -1
 
 
-if __name__ == '__main__':
-    pattern = "abaabc"  # 模式串
-    str = "abaabaabacacaabaabcc"  # 主串
+pattern = "abaabc"
+text = "abaabaabacacaabaabcc"
 
-    print(KMP(pattern, str))
+print(KMP(pattern, text))  # 13
