@@ -6,7 +6,7 @@ def KMP(pattern, text):
     combine = pattern + "#" + text
     pi = [0] * len(combine)
     # 保存当前最长相同前后缀长度
-    j = 0 
+    j = 0
 
     m = len(pattern)
 
